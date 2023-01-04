@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="recipe.css" />
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+    <script defer src="https://kit.fontawesome.com/da392c22d2.js" crossorigin="anonymous"></script>
+    <script type="module" src="src/controller.js"></script>
+    <title>Recipe</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <!-- navbar -->
+      <nav class="main-navbar">
+        <i class="fa-brands fa-joomla logo"></i>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li>
+            <a href="../index.html" class="link"><button class="nav-btn">start</button></a>
+          </li>
+          <li>
+            <a href="../trening/trening.html" class="link"><button class="nav-btn">trening</button></a>
+          </li>
+          <li>
+            <a href="../meal/meal.html" class="link"><button class="nav-btn">meal</button></a>
+          </li>
+          <li>
+            <div class="bookmark-menu">
+              <p class="bookmark-text">BOOKMARK</p>
+              <p class="bookmark-number"></p>
+              <div class="bookmark-drop"></div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="recipe-section">
+        <!-- recipe list -->
+        <div class="recipe-search-div">
+          <label for="meal">
+            Type product name and gain access <br />
+            to thousands of recipes from around the world
+          </label>
+          <input type="text" id="meal" class="inp inp-search-recipe" placeholder="e.g. chicken" />
+          <p class="error-message hidden"></p>
+        </div>
+        <!--  -->
+        <article class="recipe-article-aside">
+          <div class="recipe-list"></div>
+        </article>
+        <!-- recipe display -->
+        <section class="recipe-section-display">
+          <article class="render-recipe-article hidden" id="render-recipe"></article>
+        </section>
+      </section>
+      <!-- best recipes section -->
+      <section class="best-recipes-section">
+        <p class="best-recipes-section__header">Todays best recipes</p>
+        <!--  -->
+        <article class="best-recipes-section__article">
+          <div class="best-recipes-section__meal">
+            <img src="images/recipe1.jpg" alt="meal img" class="best-recipes-section__img" />
+            <div class="show-more best-recipes-section__meal-desc">
+              <h3 class="recipe-meal-title">lorem</h3>
+              <p class="recipe-meal-type">lorem</p>
+              <p class="recipe-desc-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi veniam quibusdam voluptatum libero necessitatibus debitis
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi veniam quibusdam voluptatum libero necessitatibus
+                debitis.
+              </p>
+              <p class="recipe-nutrition-item">Carbs: 13</p>
+              <p class="recipe-nutrition-item">Proteins: 40</p>
+              <p class="recipe-nutrition-item">Fat: 10</p>
+              <p class="recipe-nutrition-item">Kcal: 420</p>
+            </div>
+            <button class="btn btn-show">Show more</button>
+          </div>
+          <!--  -->
+          <div class="best-recipes-section__meal">
+            <img src="images/recipe2.jpg" alt="meal img" class="best-recipes-section__img" />
+            <div class="show-more best-recipes-section__meal-desc">
+              <h3 class="recipe-meal-title">lorem</h3>
+              <p class="recipe-meal-type">lorem</p>
+              <p class="recipe-desc-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi veniam quibusdam voluptatum libero necessitatibus debitis
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi veniam quibusdam voluptatum libero necessitatibus
+                debitis.
+              </p>
+              <p class="recipe-nutrition-item">Carbs: 13</p>
+              <p class="recipe-nutrition-item">Proteins: 40</p>
+              <p class="recipe-nutrition-item">Fat: 10</p>
+              <p class="recipe-nutrition-item">Kcal: 420</p>
+            </div>
+            <button class="btn btn-show">Show more</button>
+          </div>
+          <!--  -->
+          <div class="best-recipes-section__meal">
+            <img src="images/recipe3.jpg" alt="meal img" class="best-recipes-section__img" />
+            <div class="show-more best-recipes-section__meal-desc">
+              <h3 class="recipe-meal-title">lorem</h3>
+              <p class="recipe-meal-type">lorem</p>
+              <p class="recipe-desc-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi veniam quibusdam voluptatum libero necessitatibus debitis
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi veniam quibusdam voluptatum libero necessitatibus
+                debitis.
+              </p>
+              <p class="recipe-nutrition-item">Carbs: 13</p>
+              <p class="recipe-nutrition-item">Proteins: 40</p>
+              <p class="recipe-nutrition-item">Fat: 10</p>
+              <p class="recipe-nutrition-item">Kcal: 420</p>
+            </div>
+            <button class="btn btn-show">Show more</button>
+          </div>
+        </article>
+      </section>
+      <!-- footer -->
+      <footer class="main-footer">
+        <p class="footer-text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, et deserunt. Officiis, nobis? Alias obcaecati aliquid
+          aspernatur quam perspiciatis! Omnis.
+        </p>
+        <div class="footer-div">
+          <p class="footer-div__text">Created by Mateusz in 2022 @copy</p>
+          <div id="edamam-badge"></div>
+        </div>
+      </footer>
+    </main>
+      <!-- bookmark message -->
+      <div class="bookmark-div__added hidden">
+        <p class="bookmark-message">Product added to bookmark</p>
+      </div>
+      <div class="bookmark-div__removed hidden">
+        <p class="bookmark-message">Product removed from bookmark</p>
+      </div>
+    </main>
+  </body>
+</html>

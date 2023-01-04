@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="meal.css" />
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+    <script defer src="https://kit.fontawesome.com/da392c22d2.js" crossorigin="anonymous"></script>
+    <script type="module" src="src/controller.js"></script>
+    <title>Meal</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <!-- navbar -->
+      <nav class="main-navbar">
+        <i class="fa-brands fa-joomla logo"></i>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li>
+            <a href="/index.html" class="link"><button class="nav-btn">start</button></a>
+          </li>
+          <li>
+            <a href="/trening/trening.html" class="link"><button class="nav-btn">trening</button></a>
+          </li>
+          <li>
+            <a href="/recipe/recipe.html" class="link"><button class="nav-btn">recipe</button></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- meal section -->
+      <section class="meal-section">
+        <div class="input-search-wrapper">
+          <button class="btn-new-meal">Add new meal</button>
+        </div>
+
+        <div class="meal-section-wrapper">
+          <img src="images/meal-section-img.jpg" alt="nutrition img" class="nutrition-img" />
+          <p class="line-clamp meal-section-text">
+            <span>Analiza produktów </span><br />
+            Zobacz, jak spożywane jedzenie zaspokaja Twoje dzienne zapotrzebowanie na kalorie, makroelementy i mikroelementy. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Ullam in explicabo aperiam alias odit deserunt fuga excepturi itaque blanditiis?
+            Exercitationem incidunt quos aut quidem nostrum, dolorum fuga laboriosam minus ratione.
+          </p>
+          <button class="btn-toggle-clamp">read more</button>
+        </div>
+        <!-- product modal -->
+        <div class="product-search-modal hidden">
+          <article class="display-product-list"></article>
+        </div>
+
+        <article class="display-meal-article-grid hidden">
+          <article class="display-meal-article"></article>
+          <!-- sum of all meals nutrition -->
+          <div class="total-sum hidden">
+            <p class="kcal-sum"></p>
+            <canvas id="myChart"></canvas>
+          </div>
+        </article>
+      </section>
+      <!-- footer -->
+      <footer class="main-footer">
+        <p class="footer-text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, et deserunt. Officiis, nobis? Alias obcaecati aliquid
+          aspernatur quam perspiciatis! Omnis.
+        </p>
+        <div class="footer-div">
+          <p class="footer-div__text">Created by Mateusz in 2022 @copy</p>
+          <div id="edamam-badge"></div>
+        </div>
+      </footer>
+    </main>
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

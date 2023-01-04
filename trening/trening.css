@@ -1,0 +1,659 @@
+:root {
+  --blue: #1943cf;
+  --lightGrey: #f6f6f8;
+  /*  */
+  --fontColor: hsl(25, 47%, 15%);
+  --backgroundOrange: hsl(10, 79%, 65%);
+  --backgroundWhite: #fff;
+  --backgroundBisque: hsl(27, 66%, 92%);
+}
+
+/* main */
+.exercise-section {
+  display: grid;
+  grid-template-columns: repeat(1fr 2fr);
+  place-content: center;
+  min-height: 100vh;
+  color: black;
+}
+
+/* aside-menu */
+.aside-trening-menu {
+  grid-column: 1;
+  height: 100%;
+  /* background-color: var(--backgroundBisque); */
+}
+.aside-body-model {
+  position: relative;
+}
+.aside-trening-menu__header {
+  padding-block: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+#body-model-img {
+  height: 100%;
+  object-fit: cover;
+}
+.fa-circle-xmark {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+}
+
+#div-back {
+  position: absolute;
+  top: 200px;
+  left: 390px;
+}
+#div-cardio {
+  position: absolute;
+  top: 170px;
+  left: 150px;
+}
+#div-chest {
+  position: absolute;
+  top: 170px;
+  left: 80px;
+}
+#div-lower-arms {
+  position: absolute;
+  top: 270px;
+  left: 220px;
+}
+#div-upper-arms-biceps {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+}
+#div-upper-arms-triceps {
+  position: absolute;
+  top: 200px;
+  left: 500px;
+}
+#div-lower-legs {
+  position: absolute;
+  top: 550px;
+  left: 360px;
+}
+#div-upper-legs-back {
+  position: absolute;
+  top: 430px;
+  left: 360px;
+}
+#div-upper-legs-front {
+  position: absolute;
+  top: 400px;
+  left: 80px;
+}
+#div-neck {
+  position: absolute;
+  top: 100px;
+  left: 400px;
+}
+#div-shoulders {
+  position: absolute;
+  top: 130px;
+  left: 350px;
+}
+#div-waist {
+  position: absolute;
+  top: 250px;
+  left: 120px;
+}
+
+/* body parts tooltips */
+.tooltip:before,
+.tooltip:after {
+  line-height: 1;
+  font-size: 0.9em;
+  pointer-events: none;
+  position: absolute;
+  box-sizing: border-box;
+  display: none;
+  opacity: 0;
+}
+.tooltip:before {
+  content: '';
+  border: 5px solid transparent;
+  z-index: 2;
+}
+.tooltip:after {
+  content: attr(data-name);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.6em 0.8em;
+  border-radius: 4px 4px 4px 0;
+  background: #4621ff;
+  color: #ffffff;
+  z-index: 2;
+}
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: block;
+  opacity: 1;
+}
+.tooltip::before,
+.tooltip::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #4621ff;
+}
+.tooltip::after,
+.tooltip::after {
+  bottom: calc(100% + 5px);
+}
+
+/* trening-article */
+.exercise-article {
+  grid-column: 2;
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+.exercise-item {
+  display: flex;
+  justify-content: space-between;
+  width: 42em;
+  height: 10em;
+  padding-left: 1em;
+  overflow: hidden;
+}
+.exercise-item:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 99%);
+}
+.exercise-item:hover .exercise-item-info-gif {
+  transform: scale(1.1);
+  transition: transform 0.3s linear;
+}
+.exercise-item:not(:hover) .exercise-item-info-gif {
+  transform: scale(1);
+  transition: transform 0.3s linear;
+}
+.exercise-item-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.exercise-item-info-name {
+  font-weight: 500;
+}
+.exercise-item-info-name::first-letter {
+  text-transform: uppercase;
+}
+.exercise-item-info-target {
+  opacity: 0.8;
+}
+.exercise-item-info-gif {
+  width: 12em;
+  height: 12em;
+  object-fit: cover;
+}
+.btn-bookmark {
+  width: 3em;
+  height: 3em;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid hsl(25, 47%, 15%);
+  outline: none;
+  margin-top: 1em;
+}
+.fa-bookmark {
+  color: var(--fontColor);
+}
+.btns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+}
+.btn {
+  margin-inline: 2em;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0.6em 0.8em;
+  color: var(--fontColor);
+}
+.fa-arrow-right,
+.fa-arrow-left {
+  opacity: 0.8;
+  color: var(--fontColor);
+}
+
+/* === bookmark === */
+.bookmark-menu {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.bookmark-menu:hover .bookmark-drop {
+  display: block;
+}
+.bookmark-text {
+  position: relative;
+  color: white;
+}
+.bookmark-number {
+  position: absolute;
+  top: -1em;
+  right: -1em;
+  z-index: 1;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: hsl(22, 89%, 33%);
+}
+.bookmark-drop {
+  position: absolute;
+  top: 1.5em;
+  right: -1.5em;
+  width: 20em;
+  display: none;
+  border-radius: 0.5em;
+  border: 1px solid rgb(187, 187, 187);
+  background-color: var(--backgroundOrange);
+  padding-block: 1em;
+  padding-left: 1em;
+}
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.bookmark-item:hover {
+  background-color: var(--lighterBlue);
+  cursor: pointer;
+}
+.bookmark-item:last-of-type {
+  margin-bottom: 0;
+}
+.bookmark-img {
+  width: 3em;
+  height: 3em;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 0.5em;
+}
+.bookmark-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* exercise details article modal */
+.exercise-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.701);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  z-index: 2;
+}
+.btn-close-modal {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  font-size: 1.2rem;
+  /* color: var(--fontColor); */
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.5em;
+  background-color: transparent;
+}
+.exercise-details-article {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  padding: 2em;
+  margin: 2em;
+  overflow: hidden;
+  width: 60em;
+  background-color: var(--backgroundBisque);
+  color: var(--fontColor);
+}
+.exercise-details-article__info {
+  display: flex;
+  flex-direction: column;
+}
+.exercise-details-article__details {
+  display: flex;
+  justify-content: space-between;
+}
+.exercise-details-article__details p:before {
+  content: '* ';
+}
+.exercise-details-article__exercise-description {
+  text-align: justify;
+}
+.exercise-details-article__img {
+  width: 15em;
+  height: 15em;
+  object-fit: cover;
+  margin-left: 2em;
+}
+.exercise-details-article__text {
+  margin: 2em 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.exercise-name-span {
+  color: blue;
+}
+.exercise-details-article__videos-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.exercise-details-article__video {
+  width: 15em;
+  height: 15em;
+  object-fit: cover;
+}
+.video-info-wrapper {
+  width: 15em;
+}
+.video-title {
+  font-weight: 500;
+}
+.video-channel-name {
+  opacity: 0.8;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.error-div {
+  width: 25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20em;
+  margin-left: 5em;
+}
+.error-icon {
+  font-size: 3rem;
+  margin-right: 0.5em;
+}
+.error-message {
+  font-size: 1.2rem;
+}
+
+/* global classes */
+.hidden {
+  display: none;
+}
+.hide {
+  visibility: hidden;
+}
+
+/* media queries */
+@media screen and (max-width: 599px) {
+  .exercise-section {
+    place-content: center;
+    row-gap: 2em;
+    grid-template-columns: 25em;
+    /* grid-template-columns: 28em; */
+  }
+  .aside-trening-menu {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #body-model-img {
+    width: 100%;
+    margin-inline: auto;
+  }
+  .exercise-article {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    overflow: auto;
+    height: auto;
+    margin-inline: auto;
+    padding-top: 0;
+  }
+  .btn-close-modal {
+    top: 1.5em;
+    right: 2em;
+    color: black;
+    border: 1px solid black;
+  }
+  .exercise-item {
+    margin-inline: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+    height: auto;
+  }
+  .exercise-item-info {
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+  }
+  .exercise-modal {
+    margin-inline: auto;
+    flex-direction: column;
+    z-index: 2;
+    overflow: scroll;
+    padding: 1em;
+  }
+  .exercise-details-article {
+    width: 95%;
+    overflow: scroll;
+    flex-direction: column;
+    margin-inline: auto;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .exercise-details-article__details {
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+  }
+  .exercise-details-article__text {
+    text-align: center;
+  }
+  .exercise-details-article__img {
+    margin-left: 0;
+  }
+  .exercise-details-article__videos-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+  }
+  .bookmark-drop {
+    width: 100vw;
+    right: -2.5em;
+    left: -2.5em;
+    background-color: #222;
+    border-radius: 0;
+  }
+  #div-back {
+    position: absolute;
+    top: 160px;
+    left: 285px;
+  }
+  #div-cardio {
+    position: absolute;
+    top: 120px;
+    left: 110px;
+  }
+  #div-chest {
+    position: absolute;
+    left: 60px;
+    top: 120px;
+  }
+  #div-lower-arms {
+    position: absolute;
+    top: 190px;
+    left: 160px;
+  }
+  #div-upper-arms-biceps {
+    position: absolute;
+    top: 140px;
+    left: 150px;
+  }
+  #div-upper-arms-triceps {
+    position: absolute;
+    top: 160px;
+    left: 365px;
+  }
+  #div-lower-legs {
+    position: absolute;
+    top: 390px;
+    left: 260px;
+  }
+  #div-upper-legs-back {
+    position: absolute;
+    top: 300px;
+    left: 260px;
+  }
+  #div-upper-legs-front {
+    position: absolute;
+    top: 300px;
+    left: 60px;
+  }
+  #div-neck {
+    position: absolute;
+    top: 75px;
+    left: 290px;
+  }
+  #div-shoulders {
+    position: absolute;
+    top: 90px;
+    left: 260px;
+  }
+  #div-waist {
+    position: absolute;
+    top: 200px;
+    left: 85px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .exercise-section {
+    grid-template-columns: repeat(1fr 30em);
+  }
+  #body-model-img {
+    width: 100%;
+    margin-inline: auto;
+  }
+  .exercise-item {
+    margin-inline: auto;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 999px) {
+  .exercise-section {
+    grid-template-columns: 30em;
+  }
+  .aside-trening-menu {
+    grid-column: 1;
+  }
+  #body-model-img {
+    -webkit-box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
+    box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
+    margin-inline: auto;
+  }
+  .exercise-article {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    overflow: auto;
+    height: auto;
+    margin-inline: auto;
+    padding-top: 0;
+  }
+  .exercise-item {
+    margin-inline: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+    height: auto;
+  }
+  .exercise-item-info {
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+  }
+  .exercise-details-article {
+    margin: 0 auto;
+  }
+  #div-back {
+    position: absolute;
+    top: 180px;
+    left: 340px;
+  }
+  #div-cardio {
+    position: absolute;
+    top: 150px;
+    left: 130px;
+  }
+  #div-chest {
+    position: absolute;
+    top: 150px;
+    left: 70px;
+  }
+  #div-lower-arms {
+    position: absolute;
+    top: 220px;
+    left: 190px;
+  }
+  #div-upper-arms-biceps {
+    position: absolute;
+    top: 170px;
+    left: 180px;
+  }
+  #div-upper-arms-triceps {
+    position: absolute;
+    top: 180px;
+    left: 440px;
+  }
+  #div-lower-legs {
+    position: absolute;
+    top: 460px;
+    left: 310px;
+  }
+  #div-upper-legs-back {
+    position: absolute;
+    top: 370px;
+    left: 320px;
+  }
+  #div-upper-legs-front {
+    position: absolute;
+    top: 360px;
+    left: 70px;
+  }
+  #div-neck {
+    position: absolute;
+    top: 90px;
+    left: 350px;
+  }
+  #div-shoulders {
+    position: absolute;
+    top: 110px;
+    left: 310px;
+  }
+  #div-waist {
+    position: absolute;
+    top: 220px;
+    left: 105px;
+  }
+}
