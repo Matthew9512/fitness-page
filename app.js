@@ -8,7 +8,7 @@ const scrollTop = document.querySelector('.btn-scroll-top');
 // height of navbar
 const mainNavbarHeight = mainNavbar.getBoundingClientRect().height;
 
-// change arrow direction
+// faq arrow direction
 questionWrapper.forEach((qw) => {
   qw.addEventListener('click', () => {
     faqArrows.forEach((arrow) => {
