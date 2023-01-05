@@ -123,10 +123,9 @@ export const getRecipe = async () => {
 
 // take dataset.id from recipe item / return if click on pagination btn
 export const takeID = (e) => {
-  // e.stopImmediatePropagation();
   if (e.target.classList.contains('btn')) return;
   const id = e.target.closest('.recipe-wrapper').dataset.id;
-  console.log(id);
+
   // push id to link
   history.pushState(null, null, id);
   getRecipe();

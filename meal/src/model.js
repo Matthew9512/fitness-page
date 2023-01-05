@@ -43,8 +43,10 @@ export const getProductNutrition = async (productName, impAmmountValue, showNewP
   try {
     const respond = await fetch(`${config._ingUrl}?ingr=${impAmmountValue}%20${productName}`, config._ingOptions);
     const nutritionData = await respond.json();
+
     renderProductNutrition(productName, impAmmountValue, nutritionData, showNewProduct);
     scrollBottom();
+
     productSearchModal.classList.toggle('hidden');
     btnNewMeal.classList.remove('hidden');
   } catch (error) {

@@ -320,6 +320,12 @@
 }
 
 /* global classes */
+.hidden {
+  display: none;
+}
+.hide {
+  visibility: hidden;
+}
 i {
   font-size: 1.2rem;
 }

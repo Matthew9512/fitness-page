@@ -3,8 +3,6 @@ import { getRecipeList, getRecipe } from './model.js';
 
 const inpSearchRecipe = document.querySelector('.inp-search-recipe');
 
-// export let inpSearchRecipeArr = [];
-
 // show/hide more text => best recipes section
 const btnShow = document.querySelectorAll('.btn-show');
 btnShow.forEach((btn) => {
