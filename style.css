@@ -493,8 +493,6 @@ body {
 
 /* footer */
 .main-footer {
-  /* text-align: center; */
-  /* height: 6em; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -527,15 +525,6 @@ body {
   width: 10em;
   height: 2em;
 }
-/* .main-footer {
-  text-align: center;
-  height: 3em; height same as padding on main page element
-  background-color: rgb(25, 34, 55);
-  color: white;
-  position: absolute; absolute to main page element
-  bottom: 0;
-  width: 100%;
-} */
 
 /* global classes */
 .btn {

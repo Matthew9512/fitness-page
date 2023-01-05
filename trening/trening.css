@@ -298,9 +298,6 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.701);
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   z-index: 2;
 }
 .btn-close-modal {
@@ -389,21 +386,12 @@
   font-size: 1.2rem;
 }
 
-/* global classes */
-.hidden {
-  display: none;
-}
-.hide {
-  visibility: hidden;
-}
-
 /* media queries */
 @media screen and (max-width: 599px) {
   .exercise-section {
     place-content: center;
     row-gap: 2em;
     grid-template-columns: 25em;
-    /* grid-template-columns: 28em; */
   }
   .aside-trening-menu {
     grid-column: 1;
