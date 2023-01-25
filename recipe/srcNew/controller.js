@@ -1,7 +1,8 @@
-import * as config from './config.js';
-import { getRecipeList, getRecipe } from './model.js';
+import { getRecipeList, state, recipeItem } from './model.js';
+import { _debounce } from './config.js';
 
-const inpSearchRecipe = document.querySelector('.inp-search-recipe');
+const inpRecipe = document.querySelector('.inp-search-recipe');
+const recipeList = document.querySelector('.recipe-list');
 
 // show/hide more text => best recipes section
 const btnShow = document.querySelectorAll('.btn-show');
@@ -14,20 +15,24 @@ btnShow.forEach((btn) => {
   });
 });
 
+// ====== rethink ================== //
 // modal on small screen
 export const modal = () => {
   const recipeSectionDisplay = document.querySelector('.render-recipe-article');
+  history.pushState(null, null, ' ');
   if (window.innerWidth > 900) recipeSectionDisplay.classList.remove('hidden');
   else recipeSectionDisplay.classList.toggle('hidden');
 };
 
-// scroll to top
-export const scrollTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
+// ====== rethink ================== //
 
-inpSearchRecipe.addEventListener('input', config._debounce(getRecipeList, 1200));
-window.addEventListener('load', getRecipe);
+// addEventListeners
+inpRecipe.addEventListener('input', () => {
+  state.productName = inpRecipe.value;
+  //   reset fetch setings to display proper pagination
+  state.fetchFROM = 0;
+  state.fetchTO = 10;
+  state.page = 1;
+  getRecipeList();
+});
+recipeList.addEventListener('click', recipeItem);
