@@ -15,16 +15,12 @@ btnShow.forEach((btn) => {
   });
 });
 
-// ====== rethink ================== //
 // modal on small screen
 export const modal = () => {
-  const recipeSectionDisplay = document.querySelector('.render-recipe-article');
   history.pushState(null, null, ' ');
-  if (window.innerWidth > 900) recipeSectionDisplay.classList.remove('hidden');
-  else recipeSectionDisplay.classList.toggle('hidden');
+  const recipeSectionDisplay = document.querySelector('.recipe-section-display');
+  recipeSectionDisplay.classList.toggle('hidden');
 };
-
-// ====== rethink ================== //
 
 // addEventListeners
 inpRecipe.addEventListener('input', () => {
@@ -33,6 +29,7 @@ inpRecipe.addEventListener('input', () => {
   state.fetchFROM = 0;
   state.fetchTO = 10;
   state.page = 1;
+
   getRecipeList();
 });
 recipeList.addEventListener('click', recipeItem);

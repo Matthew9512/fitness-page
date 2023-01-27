@@ -4,6 +4,9 @@ import { renderPagination } from './views/paginationView.js';
 import { renderRecipe } from './views/recipeView.js';
 import { renderBookmark } from './views/bookmarkView.js';
 
+const inpRecipe = document.querySelector('.inp-search-recipe');
+const recipeSectionDisplay = document.querySelector('.recipe-section-display');
+
 export const state = {
   recipe: [],
   productName: [],
@@ -43,6 +46,10 @@ const destructuringRecipeList = () => {
   const paginationBtns = renderPagination(numOfPages);
 
   renderRecipeList(paginationBtns);
+
+  inpRecipe.value = '';
+  inpRecipe.blur();
+  recipeSectionDisplay.classList.toggle('hidden');
 };
 
 // destructur fetch recipe data

@@ -2,9 +2,13 @@ import { modal } from '../controller.js';
 import { state, bookmark } from '../model.js';
 
 export const renderRecipe = function (ID, check) {
-  const renderRecipeArticle = document.querySelector('.render-recipe-article');
-  renderRecipeArticle.classList.remove('hidden');
-  renderRecipeArticle.innerHTML = '';
+  const recipeSectionDisplay = document.querySelector('.recipe-section-display');
+
+  recipeSectionDisplay.innerHTML = '';
+
+  const renderRecipeArticle = document.createElement('article');
+  renderRecipeArticle.classList.add('render-recipe-article');
+  recipeSectionDisplay.appendChild(renderRecipeArticle);
 
   const mealNutrition = state.recipe.ingredients
     .map((ing) => {

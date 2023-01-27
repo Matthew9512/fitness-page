@@ -44,7 +44,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 500;
-  color: white;
+  color: var(--blueHeader);
 }
 .recipe-source {
   opacity: 0.9;
@@ -57,6 +57,11 @@
   display: grid;
   width: 100%;
   grid-column: 2;
+  background-color: #dfe0ef;
+  z-index: 2;
+}
+.recipe-section-display p {
+  margin: 5em auto;
 }
 .new-recipe {
   margin-inline: 4em;
@@ -77,6 +82,7 @@
   font-size: 1.2rem;
   font-weight: 500;
   margin-top: 2em;
+  color: var(--blueHeader);
 }
 .recipe-meal-title:not(:first-of-type) {
   margin: 1em;
@@ -110,9 +116,17 @@
   width: 80%;
   margin-block: 1.5em;
 }
+.new-recipe-footer-text a {
+  color: var(--blueHeader);
+  text-decoration: underline;
+  opacity: 0.6;
+}
 .new-recipe-footer-text {
   width: 80%;
   text-align: center;
+}
+.new-recipe-footer-title {
+  color: var(--blueHeader);
 }
 .btns {
   width: 100%;
@@ -130,7 +144,7 @@
   height: 2em;
   width: 2em;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 /* best recipes section */
@@ -222,6 +236,10 @@ label {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 /* media queries */
 @media screen and (max-width: 700px) {
   .bookmark-drop {
@@ -277,7 +295,6 @@ label {
   .new-recipe-footer-title {
     text-transform: uppercase;
     font-size: 1.2rem;
-    font-weight: 500;
     margin-block: 1em;
   }
   .new-recipe-footer-text {
