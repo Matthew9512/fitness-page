@@ -4,13 +4,13 @@ export const renderBookmark = function (lsArr) {
 
   for (const lsItem of lsArr) {
     const html = `
-            <div class="bookmark-item" data-id="${lsItem.id}">
-            <img src="${lsItem.gif}" alt="meal recipe img" class="bookmark-img" />
-          <div class="bookmark-info">
-            <p class="recipe-name">${lsItem.name}</p>
-            <p class="recipe-target">${lsItem.target}</p>
-            </div
-            </div>`;
+      <div class="bookmark-item" data-id="${lsItem.id}">
+        <img src="${lsItem.gif}" alt="meal recipe img" class="bookmark-img" />
+        <div class="bookmark-info">
+          <p class="recipe-name">${lsItem.name}</p>
+          <p class="recipe-target">${lsItem.target}</p>
+        </div
+      </div>`;
     bookmarkDrop.insertAdjacentHTML('afterbegin', html);
   }
 

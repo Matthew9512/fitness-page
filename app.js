@@ -1,6 +1,5 @@
 const questionWrapper = document.querySelectorAll('.question-wrapper');
 const faqArrows = document.querySelectorAll('.fa-angle-down');
-const btnLogin = document.querySelector('.btn-login');
 const mainNavbar = document.querySelector('.main-navbar');
 const heroSection = document.querySelector('.hero-section');
 const scrollTop = document.querySelector('.btn-scroll-top');

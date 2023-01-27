@@ -1,27 +1,15 @@
-:root {
-  --blue: #1943cf;
-  --lightGrey: #f6f6f8;
-  /*  */
-  --fontColor: hsl(25, 47%, 15%);
-  --backgroundOrange: hsl(10, 79%, 65%);
-  --backgroundWhite: #fff;
-  --backgroundBisque: hsl(27, 66%, 92%);
-}
-
 /* main */
 .exercise-section {
   display: grid;
-  grid-template-columns: repeat(1fr 2fr);
   place-content: center;
   min-height: 100vh;
-  color: black;
+  color: var(--blueHeader);
 }
 
 /* aside-menu */
 .aside-trening-menu {
   grid-column: 1;
   height: 100%;
-  /* background-color: var(--backgroundBisque); */
 }
 .aside-body-model {
   position: relative;
@@ -38,7 +26,7 @@
   /* mix-blend-mode: multiply; */
 }
 .fa-circle-xmark {
-  color: rgb(255, 255, 255);
+  color: var(--light);
   font-size: 1.2rem;
 }
 
@@ -152,6 +140,7 @@
   grid-column: 2;
   height: 100vh;
   width: 100%;
+  padding-top: 4.5em;
   overflow-y: scroll;
 }
 .exercise-item {
@@ -193,31 +182,11 @@
   height: 12em;
   object-fit: cover;
 }
-.btn-bookmark {
-  width: 3em;
-  height: 3em;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 1px solid hsl(25, 47%, 15%);
-  outline: none;
-  margin-top: 1em;
-}
-.fa-bookmark {
-  color: var(--fontColor);
-}
 .btns {
   display: flex;
   justify-content: space-around;
   width: 100%;
   background-color: hsl(0, 0%, 100%);
-}
-.btn {
-  margin-inline: 2em;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  padding: 0.6em 0.8em;
-  color: var(--fontColor);
 }
 .fa-arrow-right,
 .fa-arrow-left {
@@ -225,88 +194,24 @@
   color: var(--fontColor);
 }
 
-/* === bookmark === */
-.bookmark-menu {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-.bookmark-menu:hover .bookmark-drop {
-  display: block;
-}
-.bookmark-text {
-  position: relative;
-  color: white;
-}
-.bookmark-number {
-  position: absolute;
-  top: -1em;
-  right: -1em;
-  z-index: 1;
-  width: 1.6em;
-  height: 1.6em;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: hsl(22, 89%, 33%);
-}
-.bookmark-drop {
-  position: absolute;
-  top: 1.5em;
-  right: -1.5em;
-  width: 20em;
-  display: none;
-  border-radius: 0.5em;
-  border: 1px solid rgb(187, 187, 187);
-  background-color: var(--backgroundOrange);
-  padding-block: 1em;
-  padding-left: 1em;
-}
-.bookmark-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1em;
-}
-.bookmark-item:hover {
-  background-color: var(--lighterBlue);
-  cursor: pointer;
-}
-.bookmark-item:last-of-type {
-  margin-bottom: 0;
-}
-.bookmark-img {
-  width: 3em;
-  height: 3em;
-  object-fit: cover;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 0.5em;
-}
-.bookmark-info {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
 /* exercise details article modal */
 .exercise-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.701);
+  background-color: rgba(0, 0, 0, 0.777);
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-close-modal {
   position: absolute;
   top: 2em;
   right: 2em;
   font-size: 1.2rem;
-  /* color: var(--fontColor); */
   color: white;
   border: 1px solid white;
   border-radius: 0.5em;
@@ -320,8 +225,7 @@
   margin: 2em;
   overflow: hidden;
   width: 60em;
-  background-color: var(--backgroundBisque);
-  color: var(--fontColor);
+  background-color: var(--background);
 }
 .exercise-details-article__info {
   display: flex;
@@ -385,6 +289,9 @@
 }
 .error-message {
   font-size: 1.2rem;
+}
+.hidden {
+  display: none;
 }
 
 /* media queries */

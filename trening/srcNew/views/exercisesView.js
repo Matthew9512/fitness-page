@@ -9,14 +9,14 @@ export const renderExercises = function (paginationBtns) {
     const isBookmarked = checkBookmark(exercise.id);
 
     const html = `
-        <div class="exercise-item" data-id="${exercise.id}" data-name="${exercise.name}">
-  <div class="exercise-item-info">
-    <p class="exercise-item-info-name">${exercise.name}</p>
-    <p class="exercise-item-info-target">${exercise.target}</p>
-    <button class="bkm btn-bookmark">${isBookmarked}</button>
-  </div>
-  <img src="${exercise.gifUrl}" alt="exercise gif" class="exercise-item-info-gif">
-  </div>`;
+      <div class="exercise-item" data-id="${exercise.id}" data-name="${exercise.name}">
+        <div class="exercise-item-info">
+          <p class="exercise-item-info-name">${exercise.name}</p>
+          <p class="exercise-item-info-target">${exercise.target}</p>
+          <button class="bkm btn-bookmark">${isBookmarked}</button>
+        </div>
+          <img src="${exercise.gifUrl}" alt="exercise gif" class="exercise-item-info-gif">
+      </div>`;
     exerciseArticle.insertAdjacentHTML('afterbegin', html);
   }
 

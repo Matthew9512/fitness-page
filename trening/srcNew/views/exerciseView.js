@@ -16,10 +16,10 @@ export const renderExercise = function (exerciseData, videos) {
               <p class="exercise-details-article__exercise-description">Exercise description: If your goal is to gain big ${exerciseData.target} then ${exerciseData.name} is an amazing exercise for you, you will see results very fast. All you need is just ${exerciseData.equipment}!!! pull until you have enought energy kahsda auhdjasd jksdfjnac uskd Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, tenetur!</p>  
             </div>
               <img src="${exerciseData.gifUrl}" alt="gif" class="exercise-details-article__img" />
-            </div>
+          </div>
             <p class="exercise-details-article__text">Watch <span class="exercise-name-span">
             ${exerciseData.name}</span> exercise videos:</p>
-            <div class="exercise-details-article__videos-wrapper">${videos}</div>
+          <div class="exercise-details-article__videos-wrapper">${videos}</div>
         </article>`;
   exerciseModal.insertAdjacentHTML('afterbegin', html);
 
