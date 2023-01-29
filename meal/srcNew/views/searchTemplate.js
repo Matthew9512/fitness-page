@@ -1,5 +1,5 @@
 import { _debounce } from '../config.js';
-import { getProductList } from '../model.js';
+import { getProductList, state } from '../model.js';
 
 let number = 0;
 
@@ -7,10 +7,12 @@ export const renderSearchTemplate = function () {
   const mealGrid = document.querySelector('.meal__grid-article');
   number++;
 
-  const displayNumber = number === 1 ? `Meal` : `Meal number ${number}`;
+  state.mealNumber = state.mealNumber += 1;
+
+  const displayNumber = state.mealNumber <= 1 ? `Meal` : `Meal number ${state.mealNumber}`;
 
   const html = ` 
-  <div class="product__component">
+  <div class="product__component" data-id="${number}">
   <legend>${displayNumber}</legend>
         <div class="product__component-wrapper">
         <div class="product__component-div">

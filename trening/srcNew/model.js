@@ -5,13 +5,18 @@ import { renderPagination } from './views/paginationView.js';
 import { renderExercise } from './views/exerciseView.js';
 import { renderVideos } from './views/videosView.js';
 import { renderBookmark } from './views/bookmarkView.js';
+import { renderError } from './views/errorView.js';
+import { scroll } from './controller.js';
+
+const exerciseArticle = document.querySelector('.exercise-article');
+const exerciseModal = document.querySelector('.exercise-modal');
 
 export const state = {
   exercises: [],
   slicedExercises: [],
   page: 1,
-  bookmarked: '<i class="bkm fa-solid fa-bookmark"></i>',
-  notBookmarked: '<i class="bkm fa-regular fa-bookmark"></i>',
+  bookmarked: '<i class="bookmark fa-solid fa-bookmark"></i>',
+  notBookmarked: '<i class="bookmark fa-regular fa-bookmark"></i>',
 };
 
 // fetch body parts
@@ -22,7 +27,8 @@ export const getBodyParts = async function () {
 
     renderBodyParts(data);
   } catch (error) {
-    // console.log(error.message);
+    console.log(error.message);
+    renderError(error, exerciseArticle);
   }
 };
 
@@ -38,16 +44,21 @@ export const getExercises = async function (e) {
 
       state.exercises = data;
       pagination();
+      scroll();
     } catch (error) {
       console.log(error.message);
+      renderError(error, exerciseArticle);
     }
   }
 };
 
 // fetch exercise by id
 export const getExerciseByID = async function (click) {
-  const ID = click.closest('.exercise-item').dataset.id;
-  const name = click.closest('.exercise-item').dataset.name;
+  console.log(click);
+  // const ID = click.closest('.exercise-item').dataset.id;
+  // const name = click.closest('.exercise-item').dataset.name;
+  const ID = click.closest('.bkm').dataset.id;
+  const name = click.closest('.bkm').dataset.name;
 
   try {
     const exerciseRespond = await fetch(`${config._exerciseUrl}/exercise/${ID}`, config._exercisesOptions);
@@ -59,9 +70,11 @@ export const getExerciseByID = async function (click) {
 
     const slicedVideoData = await destructuring(videoData);
     const videos = renderVideos(slicedVideoData);
+
     renderExercise(exerciseData, videos);
   } catch (error) {
-    // console.log(error.message);
+    console.log(error.message);
+    renderError(error, exerciseModal);
   }
 };
 
@@ -75,6 +88,7 @@ export const pagination = function () {
 
   const paginationBtns = renderPagination(numOfPages);
   renderExercises(paginationBtns);
+  scroll();
 };
 
 // dest fetched videos

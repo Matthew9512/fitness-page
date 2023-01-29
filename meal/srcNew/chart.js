@@ -1,7 +1,7 @@
 import { state } from './model.js';
 
 //
-export const renderChart = (id) => {
+export const renderChart = function (id) {
   const data = {
     options: {
       elements: {

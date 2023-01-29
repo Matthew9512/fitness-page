@@ -73,7 +73,7 @@ export const decreaseMealSum = function (product) {
   const proteinsValue = +product.querySelector('.nutrition__details-proteins').childNodes[1].textContent;
 
   // parent of product
-  const mealSum = product.previousElementSibling;
+  const mealSum = product.closest('.product__component');
 
   // sum of current meal
   let mealCarbsValue = mealSum.querySelector('.nutrition-carbs-total');
@@ -99,10 +99,10 @@ export const decreaseMealSum = function (product) {
   const proteinsItem = state.mealSum.proteins.indexOf(Math.ceil(proteinsValue));
 
   // remove from global array data of removed product
-  state.mealSum.carbs = state.mealSum.carbs.slice(carbsItem, 1);
-  state.mealSum.kcal = state.mealSum.kcal.slice(kcalItem, 1);
-  state.mealSum.fat = state.mealSum.fat.slice(fatItem, 1);
-  state.mealSum.proteins = state.mealSum.proteins.slice(proteinsItem, 1);
+  state.mealSum.carbs.splice(carbsItem, 1);
+  state.mealSum.kcal.splice(kcalItem, 1);
+  state.mealSum.fat.splice(fatItem, 1);
+  state.mealSum.proteins.splice(proteinsItem, 1);
 
   totalSum();
 };

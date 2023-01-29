@@ -1,4 +1,5 @@
 import { _resultsNumber } from '../config.js';
+import { scrollTop } from '../controller.js';
 import { getRecipeList, state } from '../model.js';
 
 export const renderRecipeList = function (paginationBtns) {
@@ -31,6 +32,7 @@ export const renderRecipeList = function (paginationBtns) {
     state.page = state.page - 1;
 
     getRecipeList();
+    scrollTop();
   });
   btnNext.addEventListener('click', () => {
     state.fetchFROM += _resultsNumber;
@@ -38,5 +40,6 @@ export const renderRecipeList = function (paginationBtns) {
     state.page = state.page + 1;
 
     getRecipeList();
+    scrollTop();
   });
 };

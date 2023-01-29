@@ -139,6 +139,7 @@
 .exercise-article {
   grid-column: 2;
   height: 100vh;
+  place-content: start center;
   width: 100%;
   padding-top: 4.5em;
   overflow-y: scroll;
@@ -186,12 +187,11 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: hsl(0, 0%, 100%);
+  padding-block: 1em;
 }
 .fa-arrow-right,
 .fa-arrow-left {
   opacity: 0.8;
-  color: var(--fontColor);
 }
 
 /* exercise details article modal */
@@ -212,10 +212,9 @@
   top: 2em;
   right: 2em;
   font-size: 1.2rem;
-  color: white;
-  border: 1px solid white;
+  color: black;
+  border: 1px solid black;
   border-radius: 0.5em;
-  background-color: transparent;
 }
 .exercise-details-article {
   display: flex;
@@ -295,9 +294,9 @@
 }
 
 /* media queries */
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 699px) {
   .exercise-section {
-    place-content: center;
+    place-content: start center;
     row-gap: 2em;
     grid-template-columns: 25em;
   }
@@ -371,13 +370,6 @@
     justify-content: center;
     margin-bottom: 3em;
   }
-  .bookmark-drop {
-    width: 100vw;
-    right: -2.5em;
-    left: -2.5em;
-    background-color: #222;
-    border-radius: 0;
-  }
   #div-back {
     position: absolute;
     top: 160px;
@@ -440,12 +432,12 @@
   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
-  .exercise-section {
-    grid-template-columns: repeat(1fr 30em);
-  }
   #body-model-img {
     width: 100%;
     margin-inline: auto;
+  }
+  .exercise-article {
+    height: 113vh;
   }
   .exercise-item {
     margin-inline: auto;

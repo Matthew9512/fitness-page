@@ -4,7 +4,7 @@ export const renderBookmark = function (lsArr) {
 
   for (const lsItem of lsArr) {
     const html = `
-        <div class="bookmark-item" data-id="${lsItem.id}">
+        <div class="recipe-wrapper" data-id="#${lsItem.id}">
         <img src="${lsItem.image}" alt="meal recipe img" class="bookmark-img" />
       <div class="bookmark-info">
         <p class="recipe-title">${lsItem.title}</p>

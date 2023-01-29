@@ -61,7 +61,7 @@
   z-index: 2;
 }
 .recipe-section-display p {
-  margin: 5em auto;
+  margin: 1em auto;
 }
 .new-recipe {
   margin-inline: 4em;
@@ -100,7 +100,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 2em 0;
+  margin: 1em 0;
 }
 .ingredients-list {
   columns: 2;
@@ -196,60 +196,12 @@
 label {
   margin-bottom: 1em;
 }
-/* error message */
-.error-message {
-  color: red;
-  font-style: italic;
-  margin-bottom: 2em;
-}
-.error {
-  position: fixed;
-  top: 2em;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  background-color: rgb(245, 174, 174);
-  padding: 2em 1em 0 1em;
-  border: 1px solid red;
-  border-radius: 1em;
-  animation: show 2.5s ease-in-out forwards;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  60% {
-    opacity: 0.8;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 .hidden {
   display: none;
 }
 
 /* media queries */
-@media screen and (max-width: 700px) {
-  .bookmark-drop {
-    width: 100vw;
-    right: -2.5em;
-    left: -2.5em;
-    background-color: #222;
-    border-radius: 0;
-  }
-}
 @media screen and (max-width: 900px) {
   .recipe-section {
     display: flex;
@@ -280,6 +232,7 @@ label {
   }
   .new-recipe {
     margin-inline: 0;
+    padding-bottom: 0;
   }
   .recipe-ingredients {
     padding-inline: 1em;
@@ -302,7 +255,7 @@ label {
     margin: 1px;
   }
   .render-recipe-article {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;

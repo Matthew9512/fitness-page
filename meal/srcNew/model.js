@@ -19,6 +19,7 @@ export const state = {
     fat: [],
     proteins: [],
   },
+  mealNumber: 0,
 };
 
 //
@@ -33,10 +34,11 @@ const destructuringData = function () {
 };
 
 export const getProductList = config._debounce(async function (inputValue) {
-  const errorMessage = document.querySelector('.error-message');
   const productParent = inputValue.closest('.product__component');
 
   state.productParent = productParent;
+
+  const errorMessage = state.productParent.querySelector('.error-message');
   console.log(productParent);
 
   try {
@@ -51,17 +53,18 @@ export const getProductList = config._debounce(async function (inputValue) {
       renderProductList();
     }
   } catch (error) {
-    // console.log(error.message);
-    // errorMessage.classList.remove('hide');
-    // errorMessage.innerHTML = `We couldn't find any product named: <span class="error-span">${error.message}</span> please try again :)`;
+    console.log(error.message);
+    errorMessage.classList.remove('hide');
+    errorMessage.innerHTML = `We couldn't find any product named: <span class="error-span">${error.message}</span> please try again :)`;
   }
 
   inputValue.value = '';
   inputValue.blur();
 });
 
-//
+// fetch product nutrition
 export const getProductNutrition = async function (inputValue, productName) {
+  const errorMessage = state.productParent.querySelector('.error-message');
   try {
     const respond = await fetch(`${config._ingUrl}?ingr=${inputValue}%20${productName}`, config._ingOptions);
     const nutritionData = await respond.json();
@@ -72,13 +75,16 @@ export const getProductNutrition = async function (inputValue, productName) {
     destructuringData();
   } catch (error) {
     console.log(error.message);
+    productSearchModal.classList.toggle('hidden');
+    errorMessage.classList.remove('hide');
+    errorMessage.innerHTML = `Looks like something went wrong, please try again ;)`;
   }
 };
 
-//
+// remove clicked product
 export const removeProduct = function (click) {
   const parentElement = click.closest('.product__component');
-  const product = parentElement.querySelector('.product');
+  const product = click.closest('.product');
 
   decreaseMealSum(product);
   parentElement.removeChild(product);

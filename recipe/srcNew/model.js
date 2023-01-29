@@ -3,6 +3,7 @@ import { renderRecipeList } from './views/recipeListView.js';
 import { renderPagination } from './views/paginationView.js';
 import { renderRecipe } from './views/recipeView.js';
 import { renderBookmark } from './views/bookmarkView.js';
+import { renderError } from './views/errorView.js';
 
 const inpRecipe = document.querySelector('.inp-search-recipe');
 const recipeSectionDisplay = document.querySelector('.recipe-section-display');
@@ -19,6 +20,8 @@ export const state = {
 
 // fetch recipe list
 export const getRecipeList = config._debounce(async function () {
+  const bestRecipesSection = document.querySelector('.best-recipes-section');
+  const errorMessage = document.querySelector('.error-message');
   try {
     const respond = await fetch(
       `${config._oldRecipeUrl}&q=${state.productName}&from=${state.fetchFROM}&to=${state.fetchTO}`,
@@ -27,9 +30,20 @@ export const getRecipeList = config._debounce(async function () {
     const data = await respond.json();
     state.recipe = data;
 
-    destructuringRecipeList();
+    inpRecipe.value = '';
+    inpRecipe.blur();
+
+    if (data.hits.length === 0) {
+      throw new Error(`We couldn't find any product, please try again :)`);
+    } else {
+      destructuringRecipeList();
+      // hide product list and error message
+      errorMessage.classList.add('hidden');
+      bestRecipesSection.classList.add('hidden');
+    }
   } catch (error) {
-    // console.log(error.message);
+    errorMessage.classList.remove('hidden');
+    errorMessage.innerHTML = `${error.message}`;
   }
 });
 
@@ -46,10 +60,8 @@ const destructuringRecipeList = () => {
   const paginationBtns = renderPagination(numOfPages);
 
   renderRecipeList(paginationBtns);
-
-  inpRecipe.value = '';
-  inpRecipe.blur();
-  recipeSectionDisplay.classList.toggle('hidden');
+  if (window.innerWidth < 900) recipeSectionDisplay.classList.add('hidden');
+  else recipeSectionDisplay.classList.remove('hidden');
 };
 
 // destructur fetch recipe data
@@ -74,8 +86,10 @@ const destructuringRecipe = function (data) {
 // fetch recipe
 export const recipeItem = async function (e) {
   const click = e.target;
+  console.log(click);
   if (!click.closest('.recipe-wrapper')) return;
   else {
+    recipeSectionDisplay.classList.remove('hidden');
     const parentID = click.closest('.recipe-wrapper').dataset.id;
     window.history.pushState(null, null, parentID);
     const ID = window.location.hash.slice(1);
@@ -92,7 +106,9 @@ export const recipeItem = async function (e) {
       const check = checkBookmark(ID);
       renderRecipe(ID, check);
     } catch (error) {
-      // console.log(error.message);
+      console.log(error.message);
+      const errorDiv = renderError();
+      document.body.insertAdjacentHTML('afterbegin', errorDiv);
     }
   }
 };

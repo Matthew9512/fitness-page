@@ -28,6 +28,9 @@ btnToggleClamp.addEventListener('click', () => {
   mealSectionText.classList.toggle('line-clamp');
 });
 productSearch.addEventListener('click', (e) => {
+  const errorMessage = model.state.productParent.querySelector('.error-message');
+  errorMessage.classList.add('hide');
+
   const click = e.target;
   if (!click.classList.contains('btn-add')) return;
   else {
