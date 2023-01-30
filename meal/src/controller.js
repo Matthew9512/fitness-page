@@ -32,7 +32,7 @@ productSearch.addEventListener('click', (e) => {
   errorMessage.classList.add('hide');
 
   const click = e.target;
-  if (!click.classList.contains('btn-add')) return;
+  if (!click.classList.contains('add')) return;
   else {
     const inputValue = click.closest('.item__wrapper').querySelector('.input-search').value;
     const productName = click.closest('.item__wrapper').querySelector('.product__title').textContent;
@@ -41,6 +41,6 @@ productSearch.addEventListener('click', (e) => {
 });
 mealGridArticle.addEventListener('click', (e) => {
   const click = e.target;
-  if (!click.classList.contains('btn-delete')) return;
+  if (!click.classList.contains('delete')) return;
   else model.removeProduct(click);
 });

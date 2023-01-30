@@ -17,8 +17,6 @@
   width: max-content;
   object-fit: cover;
   margin-bottom: 1em;
-
-  /* mix-blend-mode: multiply; */
 }
 .meal__section-text {
   text-align: center;
@@ -181,6 +179,23 @@ legend {
   }
 }
 @media screen and (max-width: 599px) {
+  .product__search-list {
+    margin-inline: auto;
+  }
+
+  .item__wrapper {
+    width: 20em;
+    justify-content: center;
+  }
+  .product__title {
+    width: 15em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .group {
+    width: max-content;
+  }
   .meal__grid-article {
     padding-right: 0;
   }

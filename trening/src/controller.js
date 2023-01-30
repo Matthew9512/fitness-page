@@ -3,6 +3,7 @@ const asideBodyModel = document.querySelector('.aside-body-model');
 const exerciseArticle = document.querySelector('.exercise-article');
 const bookmarkDrop = document.querySelector('.bookmark-drop');
 
+// fetch body parts name
 // if (navigator.onLine) model.getBodyParts();
 
 // scroll into exerciseArticle

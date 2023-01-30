@@ -14,7 +14,7 @@ export const renderProductNutrition = function () {
 
   const html = `
   <div class="product">
-  <button class="button btn-delete"><i class="fa-solid fa-trash"></i></button>
+  <button class="button delete btn-delete"><i class="delete fa-solid fa-trash"></i></button>
     <div class="product__wrapper">
       <div class="product__nutrition-info">
         <p class="product__title"><i class="fa-solid fa-utensils"></i>${state.productName}</p>

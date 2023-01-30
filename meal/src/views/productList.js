@@ -23,7 +23,7 @@ export const renderProductList = function () {
             <input placeholder="Search" type="search" class="input input-search" />
             </div>
             </div>
-            <button class="button btn-add"><i class="fa-solid fa-plus"></i></button>
+            <button class="button add btn-add"><i class="add fa-solid fa-plus"></i></button>
       </div>`;
     productSearchList.insertAdjacentHTML('afterbegin', html);
   }

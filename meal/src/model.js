@@ -2,6 +2,7 @@ import * as config from './config.js';
 import { renderProductList } from './views/productList.js';
 import { renderProductNutrition } from './views/productData.js';
 import { decreaseMealSum } from './nutritionData.js';
+import { renderSearchTemplate } from './views/searchTemplate.js';
 
 export const state = {
   productName: [],
@@ -87,5 +88,29 @@ export const removeProduct = function (click) {
   const product = click.closest('.product');
 
   decreaseMealSum(product);
+  removeHTML(click);
   parentElement.removeChild(product);
+};
+
+// keep track on removing meal templates based on how many products left
+const removeHTML = function (click) {
+  const mealGridArticle = document.querySelector('.meal__grid-article');
+  const parentElement = click.closest('.product__component');
+  const children = click.closest('.product__component').querySelectorAll('.product');
+  const mealGridSum = document.querySelector('.meal__grid-sum');
+
+  // number of meal templates
+  const childrenNumber = mealGridArticle.childElementCount;
+
+  // if theres only one meal template (parentElement => ('.product__component')) and it has no products then remove this meal template, hide main chart and render new search template
+  if (children.length === 1 && childrenNumber === 1) {
+    mealGridArticle.removeChild(parentElement);
+    mealGridSum.classList.add('hidden');
+    renderSearchTemplate();
+
+    // if theres more than one meal template (parentElement => ('.product__component')) and it has no products then remove this meal template
+  } else if (children.length === 1 && childrenNumber !== 1) {
+    mealGridArticle.removeChild(parentElement);
+    state.mealNumber = state.mealNumber -= 1;
+  }
 };
