@@ -67,7 +67,7 @@ export const getProductList = config._debounce(async function (inputValue) {
 export const getProductNutrition = async function (inputValue, productName) {
   const errorMessage = state.productParent.querySelector('.error-message');
   try {
-    const respond = await fetch(`${config._ingUrl}?ingr=${inputValue}%20${productName}`, config._ingOptions);
+    const respond = await fetch(`${config._ingUrl}?ingr=${inputValue}g%20${productName}`, config._ingOptions);
     const nutritionData = await respond.json();
 
     state.productData = nutritionData;

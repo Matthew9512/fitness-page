@@ -196,9 +196,11 @@
 label {
   margin-bottom: 1em;
 }
-
 .hidden {
   display: none;
+}
+.footer-div {
+  flex-direction: row;
 }
 
 /* media queries */

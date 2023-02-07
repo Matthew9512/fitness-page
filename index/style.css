@@ -117,13 +117,13 @@ body {
   background-color: var(--background);
   font-weight: 500;
 }
-
 .main-container {
   min-height: 100vh;
   position: relative;
   padding-bottom: 9.7em;
   max-width: 78em;
   margin: auto;
+  background-color: #d6d7ea;
 }
 
 /* navigation  */
@@ -165,7 +165,7 @@ body {
   text-decoration: none;
   margin: 0;
   padding: 0;
-  background-color: var(--background);
+  background-color: #d6d7ea;
 }
 .menu > li {
   margin: 0 0.5rem;
@@ -223,9 +223,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: linear-gradient(to left, #a9a6ea94, #c8d4eb58, #000000af), url('images/hero-img.jpg'); */
-  /* background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)), url('images/hero-img.jpg'); */
-  background: linear-gradient(#75777c9f, #31363c8d), url('images/hero-img.jpg');
+  background: linear-gradient(to left, #a9a6ea94, #c8d4eb58, #000000af), url('images/hero-img.jpg');
 
   background-position: center;
   background-repeat: no-repeat;
@@ -435,6 +433,7 @@ body {
 }
 .footer-div {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
@@ -442,6 +441,19 @@ body {
   background-color: #d6d7ea;
   color: var(--blueHeader);
   padding-block: 1em;
+}
+.media i {
+  font-size: 1.4em;
+  margin-top: 0.5em;
+}
+.fa-github {
+  margin-right: 0.5em;
+}
+.fa-github:hover {
+  color: #171515;
+}
+.fa-linkedin:hover {
+  color: #0077b5;
 }
 .footer-div a {
   text-decoration: underline;
@@ -587,6 +599,7 @@ body {
   border: 1px solid rgb(187, 187, 187);
   padding-block: 1em;
   padding-left: 1em;
+  background-color: #222;
 }
 .bookmark-item {
   display: flex;
@@ -647,11 +660,18 @@ body {
 
 /* media queries */
 @media screen and (max-width: 700px) {
+  .hero-section {
+    background-position-x: left;
+    align-items: end;
+    padding-bottom: 7em;
+  }
+  .hero-section__header {
+    color: #d6d7ea;
+  }
   .bookmark-drop {
     width: 100vw;
     right: -2.5em;
     left: -2.5em;
-    background-color: #222;
     border-radius: 0;
   }
   .menu-button-container {

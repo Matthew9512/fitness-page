@@ -20,7 +20,7 @@ export const renderProductList = function () {
                 </path>
             </g>
             </svg>
-            <input placeholder="Search" type="search" class="input input-search" />
+            <input placeholder="product weight in g" type="number" class="input input-search" />
             </div>
             </div>
             <button class="button add btn-add"><i class="add fa-solid fa-plus"></i></button>

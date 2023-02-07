@@ -162,6 +162,9 @@ legend {
   color: var(--blue);
   margin-bottom: 0.4em;
 }
+.footer-div {
+  flex-direction: row;
+}
 
 /* media queries */
 @media screen and (max-width: 1024px) {
