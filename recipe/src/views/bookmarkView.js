@@ -13,16 +13,4 @@ export const renderBookmark = function (lsArr) {
         </div>`;
     bookmarkDrop.insertAdjacentHTML('afterbegin', html);
   }
-
-  return;
-  // adding functionality to bookmark btns
-  const bookmarkItem = document.querySelectorAll('.bookmark-item');
-  bookmarkItem.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      // temporary => display bookmarked recipe from bookmark
-      const clickId = e.currentTarget.dataset.id;
-      getRecipe(clickId);
-      // temporary => display bookmarked recipe from bookmark
-    });
-  });
 };

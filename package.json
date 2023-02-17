@@ -4,18 +4,13 @@
   "description": "fitness page",
   "source": "index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "mati",
   "license": "ISC",
   "devDependencies": {
-    "os-browserify": "^0.3.0",
-    "parcel": "^2.8.2",
-    "path-browserify": "^1.0.1",
-    "process": "^0.11.10"
-  },
-  "dependencies": {
-    "dotenv": "^16.0.3"
+    "vite": "^4.1.2"
   }
 }

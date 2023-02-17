@@ -3,6 +3,7 @@ import { renderProductList } from './views/productList.js';
 import { renderProductNutrition } from './views/productData.js';
 import { decreaseMealSum } from './nutritionData.js';
 import { renderSearchTemplate } from './views/searchTemplate.js';
+import { loader } from './views/loaderView.js';
 
 export const state = {
   productName: [],
@@ -36,11 +37,11 @@ const destructuringData = function () {
 
 export const getProductList = config._debounce(async function (inputValue) {
   const productParent = inputValue.closest('.product__component');
+  loader(productParent);
 
   state.productParent = productParent;
 
   const errorMessage = state.productParent.querySelector('.error-message');
-  console.log(productParent);
 
   try {
     const respond = await fetch(`${config._overallUrl}?ingr=${inputValue.value}`, config._overallOptions);

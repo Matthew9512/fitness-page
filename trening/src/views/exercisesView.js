@@ -15,7 +15,7 @@ export const renderExercises = function (paginationBtns) {
           <p class="exercise-item-info-target">${exercise.target}</p>
           <button class="bookmark btn-bookmark">${isBookmarked}</button>
         </div>
-          <img src="${exercise.gifUrl}" alt="exercise gif" class="exercise-item-info-gif">
+          <img src="${exercise.gifUrl}" alt="exercise gif" loading="lazy" class="exercise-item-info-gif">
       </div>`;
     exerciseArticle.insertAdjacentHTML('afterbegin', html);
   }
