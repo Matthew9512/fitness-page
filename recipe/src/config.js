@@ -1,6 +1,3 @@
-// import * as dotenv from 'dotenv';
-// dotenv.config();
-
 export const _debounce = function (fn, deley = 1200) {
   let id;
   return (...args) => {
@@ -19,10 +16,8 @@ export const _recipeOptions = {
   },
 };
 // edamam app info
-export const _recipeApiKey = `047e98544b24e92e8bb6ba60b458939c`;
-export const _recipeAppId = `f6481aae`;
-// export const _recipeApiKey = `${process.env.RECIPE_API_KEY}`;
-// export const _recipeAppId = `${process.env.RECIPE_APP_ID}`;
+export const _recipeApiKey = import.meta.env.VITE_RECIPE_API_KEY;
+export const _recipeAppId = import.meta.env.VITE_RECIPE_APP_ID;
 
 // === new version of api === //
 export const _recipeUrl = `https://api.edamam.com/api/recipes/v2`;
