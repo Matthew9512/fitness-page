@@ -1,20 +1,23 @@
-<h1 align="center">Fitness Page</h1>
+<div align="center">
+<h1>Fitness Page</h1>
 
-<a align="center" href='https://js-fitness-life.netlify.app/'>https://js-fitness-life.netlify.app/</a>
+<a href='https://js-fitness-life.netlify.app/'>https://js-fitness-life.netlify.app/</a>
 
-<p>
+<h4>
   This is a fitness website built using vanilla JavaScript. The project includes several features to help users with their fitness journey, including exercise search with related YouTube videos, meal recipes with nutrition lists, and the ability to create custom meals by adding products with their weight to track microelements intake throughout the day.
-</p>
+</h4>
+</div>
 
 ![js-fitness-life](https://github.com/Matthew9512/fitness-page/assets/108298198/cd5564c0-4521-4cba-a665-3c8a7b9be5e6)
 
 <h2>Features</h2>
 
 <ul>
-  <li>Exercise search with related YouTube videos</li>
-  <li>Meal recipes with nutrition lists</li>
-  <li>Create custom meals by adding products with their weight</li>
-  <li>Track microelements intake throughout the day</li>
+  <li>Exercise search by muscle group</li>
+  <li>Choose exercise to see description and YouTube videos for this exercise</li>
+  <li>Meal recipes with nutrition list and description</li>
+  <li>Create own meals by searching products and adding weight to see nutritions list</li>
+  <li>Track microelements intake of every meal throughout the day</li>
 </ul>
 
 <h2>Technologies Used</h2>
