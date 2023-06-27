@@ -4,14 +4,14 @@ import { getProductList, state } from '../model.js';
 let number = 0;
 
 export const renderSearchTemplate = function () {
-  const mealGrid = document.querySelector('.meal__grid-article');
-  number++;
+   const mealGrid = document.querySelector('.meal__grid-article');
+   number++;
 
-  state.mealNumber = state.mealNumber += 1;
+   state.mealNumber = state.mealNumber += 1;
 
-  const displayNumber = state.mealNumber <= 1 ? `Meal` : `Meal number ${state.mealNumber}`;
+   const displayNumber = state.mealNumber <= 1 ? `Meal` : `Meal number ${state.mealNumber}`;
 
-  const html = ` 
+   const html = ` 
   <div class="product__component" data-id="${number}">
   <legend>${displayNumber}</legend>
         <div class="product__component-wrapper">
@@ -24,7 +24,7 @@ export const renderSearchTemplate = function () {
                 </path>
             </g>
             </svg>
-            <input placeholder="Search" type="search" class="input input-search" />
+            <input placeholder="E.g. cheese" type="search" class="input input-search" />
           </div>
         <button class="button btn-add-meal">New meal</button>
         </div>
@@ -41,15 +41,15 @@ export const renderSearchTemplate = function () {
         </div>
       </div>`;
 
-  mealGrid.insertAdjacentHTML('afterbegin', html);
+   mealGrid.insertAdjacentHTML('afterbegin', html);
 
-  const btnAddMeal = document.querySelector('.btn-add-meal');
-  const inputSearch = document.querySelectorAll('.input-search');
+   const btnAddMeal = document.querySelector('.btn-add-meal');
+   const inputSearch = document.querySelectorAll('.input-search');
 
-  btnAddMeal.addEventListener('click', renderSearchTemplate);
-  inputSearch.forEach((inputValue) => {
-    inputValue.addEventListener('input', () => {
-      getProductList(inputValue);
-    });
-  });
+   btnAddMeal.addEventListener('click', renderSearchTemplate);
+   inputSearch.forEach((inputValue) => {
+      inputValue.addEventListener('input', () => {
+         getProductList(inputValue);
+      });
+   });
 };

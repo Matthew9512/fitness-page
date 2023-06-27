@@ -1,426 +1,458 @@
 /* main */
 .exercise-section {
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
-  color: var(--blueHeader);
+   display: grid;
+   place-content: center;
+   min-height: 100vh;
+   color: var(--blueHeader);
 }
 
 /* aside-menu */
 .aside-trening-menu {
-  grid-column: 1;
-  height: 100%;
+   grid-column: 1;
+   height: 100%;
 }
 .aside-body-model {
-  position: relative;
+   position: relative;
 }
 .aside-trening-menu__header {
-  padding-block: 1.2em;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+   padding-block: 1.2em;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
 }
 #body-model-img {
-  height: 100%;
-  object-fit: cover;
+   height: 100%;
+   object-fit: cover;
 }
 .fa-circle-xmark {
-  color: var(--light);
-  font-size: 1.2rem;
+   color: var(--light);
+   font-size: 1.2rem;
 }
 
 #div-back {
-  position: absolute;
-  top: 30%;
-  left: 70%;
+   position: absolute;
+   top: 30%;
+   left: 70%;
 }
 #div-cardio {
-  position: absolute;
-  top: 22%;
-  left: 28%;
+   position: absolute;
+   top: 22%;
+   left: 28%;
 }
 #div-chest {
-  position: absolute;
-  top: 22%;
-  left: 15%;
+   position: absolute;
+   top: 22%;
+   left: 15%;
 }
 #div-lower-arms {
-  position: absolute;
-  top: 35%;
-  left: 40%;
+   position: absolute;
+   top: 35%;
+   left: 40%;
 }
 #div-upper-arms-biceps {
-  position: absolute;
-  top: 26%;
-  left: 37%;
+   position: absolute;
+   top: 26%;
+   left: 37%;
 }
 #div-upper-arms-triceps {
-  position: absolute;
-  top: 26%;
-  left: 90%;
+   position: absolute;
+   top: 26%;
+   left: 90%;
 }
 #div-lower-legs {
-  position: absolute;
-  top: 74%;
-  left: 65%;
+   position: absolute;
+   top: 74%;
+   left: 65%;
 }
 #div-upper-legs-back {
-  position: absolute;
-  top: 56%;
-  left: 65%;
+   position: absolute;
+   top: 56%;
+   left: 65%;
 }
 #div-upper-legs-front {
-  position: absolute;
-  top: 53%;
-  left: 32%;
+   position: absolute;
+   top: 53%;
+   left: 32%;
 }
 #div-neck {
-  position: absolute;
-  top: 14%;
-  left: 72%;
+   position: absolute;
+   top: 14%;
+   left: 72%;
 }
 #div-shoulders {
-  position: absolute;
-  top: 18%;
-  left: 65%;
+   position: absolute;
+   top: 18%;
+   left: 65%;
 }
 #div-waist {
-  position: absolute;
-  top: 35%;
-  left: 22%;
+   position: absolute;
+   top: 35%;
+   left: 22%;
 }
 
 /* body parts tooltips */
 .tooltip:before,
 .tooltip:after {
-  line-height: 1;
-  font-size: 0.9em;
-  pointer-events: none;
-  position: absolute;
-  box-sizing: border-box;
-  display: none;
-  opacity: 0;
+   line-height: 1;
+   font-size: 0.9em;
+   pointer-events: none;
+   position: absolute;
+   box-sizing: border-box;
+   display: none;
+   opacity: 0;
 }
 .tooltip:before {
-  content: '';
-  border: 5px solid transparent;
-  z-index: 2;
+   content: '';
+   border: 5px solid transparent;
+   z-index: 2;
 }
 .tooltip:after {
-  content: attr(data-name);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0.6em 0.8em;
-  border-radius: 4px 4px 4px 0;
-  background: #4621ff;
-  color: #ffffff;
-  z-index: 2;
+   content: attr(data-name);
+   text-align: center;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   padding: 0.6em 0.8em;
+   border-radius: 4px 4px 4px 0;
+   background: #4621ff;
+   color: #ffffff;
+   z-index: 2;
 }
 .tooltip:hover:before,
 .tooltip:hover:after {
-  display: block;
-  opacity: 1;
+   display: block;
+   opacity: 1;
 }
 .tooltip::before,
 .tooltip::before {
-  bottom: 100%;
-  border-bottom-width: 0;
-  border-top-color: #4621ff;
+   bottom: 100%;
+   border-bottom-width: 0;
+   border-top-color: #4621ff;
 }
 .tooltip::after,
 .tooltip::after {
-  bottom: calc(100% + 5px);
+   bottom: calc(100% + 5px);
 }
 
 /* trening-article */
 .exercise-article {
-  grid-column: 2;
-  height: 100vh;
-  place-content: start center;
-  width: 100%;
-  padding-top: 4.5em;
-  overflow-y: scroll;
+   grid-column: 2;
+   height: 100vh;
+   place-content: start center;
+   width: 100%;
+   padding-top: 4.5em;
+   overflow-y: scroll;
 }
 .exercise-item {
-  display: flex;
-  justify-content: space-between;
-  width: 42em;
-  height: 10em;
-  padding-left: 1em;
-  overflow: hidden;
+   display: flex;
+   justify-content: space-between;
+   width: 42em;
+   height: 10em;
+   padding-left: 1em;
+   overflow: hidden;
 }
 .exercise-item:hover {
-  cursor: pointer;
-  background-color: hsl(0, 0%, 99%);
+   cursor: pointer;
+   background-color: hsl(0, 0%, 99%);
 }
 .exercise-item:hover .exercise-item-info-gif {
-  transform: scale(1.1);
-  transition: transform 0.3s linear;
+   transform: scale(1.1);
+   transition: transform 0.3s linear;
 }
 .exercise-item:not(:hover) .exercise-item-info-gif {
-  transform: scale(1);
-  transition: transform 0.3s linear;
+   transform: scale(1);
+   transition: transform 0.3s linear;
 }
 .exercise-item-info {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
 }
 .exercise-item-info-name {
-  font-weight: 500;
+   font-weight: 500;
 }
 .exercise-item-info-name::first-letter {
-  text-transform: uppercase;
+   text-transform: uppercase;
 }
 .exercise-item-info-target {
-  opacity: 0.8;
+   opacity: 0.8;
 }
 .exercise-item-info-gif {
-  width: 12em;
-  height: 12em;
-  object-fit: cover;
+   width: 12em;
+   height: 12em;
+   object-fit: cover;
 }
 .btns {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  padding-block: 1em;
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   padding-block: 1em;
 }
 .fa-arrow-right,
 .fa-arrow-left {
-  opacity: 0.8;
+   opacity: 0.8;
 }
 
 /* exercise details article modal */
 .exercise-modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.777);
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: rgba(0, 0, 0, 0.777);
+   z-index: 2;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 .btn-close-modal {
-  position: absolute;
-  top: 2em;
-  right: 2em;
-  font-size: 1.2rem;
-  color: black;
-  border: 1px solid black;
-  border-radius: 0.5em;
+   position: absolute;
+   top: 2em;
+   right: 2em;
+   font-size: 1.2rem;
+   color: black;
+   border: 1px solid black;
+   border-radius: 0.5em;
 }
 .exercise-details-article {
-  display: flex;
-  flex-direction: column;
-  border-radius: 1em;
-  padding: 2em;
-  margin: 2em;
-  overflow: hidden;
-  width: 60em;
-  background-color: var(--background);
+   display: flex;
+   flex-direction: column;
+   border-radius: 1em;
+   padding: 2em;
+   margin: 2em;
+   overflow: hidden;
+   width: 60em;
+   background-color: var(--background);
 }
 .exercise-details-article__info {
-  display: flex;
-  flex-direction: column;
+   display: flex;
+   flex-direction: column;
 }
 .exercise-details-article__details {
-  display: flex;
-  justify-content: space-between;
+   display: flex;
+   justify-content: space-between;
 }
 .exercise-details-article__details p:before {
-  content: '* ';
+   content: '* ';
 }
 .exercise-details-article__exercise-description {
-  text-align: justify;
+   text-align: justify;
 }
 .exercise-details-article__img {
-  width: 15em;
-  height: 15em;
-  object-fit: cover;
-  margin-left: 2em;
+   width: 15em;
+   height: 15em;
+   object-fit: cover;
+   margin-left: 2em;
 }
 .exercise-details-article__text {
-  margin: 2em 0;
-  font-weight: 500;
-  font-size: 1.2rem;
+   margin: 2em 0;
+   font-weight: 500;
+   font-size: 1.2rem;
 }
 .exercise-name-span {
-  color: blue;
+   color: blue;
 }
 .exercise-details-article__videos-wrapper {
-  display: flex;
-  justify-content: space-between;
+   display: flex;
+   justify-content: space-between;
 }
 .exercise-details-article__video {
-  width: 15em;
-  height: 15em;
-  object-fit: cover;
+   width: 15em;
+   height: 15em;
+   object-fit: cover;
 }
 .video-info-wrapper {
-  width: 15em;
+   width: 15em;
 }
 .video-title {
-  font-weight: 500;
+   font-weight: 500;
 }
 .video-channel-name {
-  opacity: 0.8;
-  font-size: 0.8rem;
-  font-style: italic;
+   opacity: 0.8;
+   font-size: 0.8rem;
+   font-style: italic;
 }
 .error-div {
-  width: 25em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20em;
-  margin-left: 5em;
+   width: 25em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20em;
+   margin-left: 5em;
 }
 .error-icon {
-  font-size: 3rem;
-  margin-right: 0.5em;
+   font-size: 3rem;
+   margin-right: 0.5em;
 }
 .error-message {
-  font-size: 1.2rem;
+   font-size: 1.2rem;
+}
+.spinner-wrapper {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: rgba(25, 25, 25, 0.845);
+   z-index: 9;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   border: 9px solid;
+   border-color: #dbdcef;
+   border-right-color: #474bff;
+   animation: spinner-d3wgkg 1s infinite linear;
+   margin-inline: auto;
+}
+
+@keyframes spinner-d3wgkg {
+   to {
+      transform: rotate(1turn);
+   }
+}
+.hide {
+   visibility: hidden;
+   height: 0;
 }
 .hidden {
-  display: none;
+   display: none;
 }
 
 /* media queries */
 @media screen and (max-width: 699px) {
-  .exercise-section {
-    place-content: start center;
-    row-gap: 2em;
-    grid-template-columns: 25em;
-  }
-  .aside-trening-menu {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  #body-model-img {
-    width: 100%;
-    margin-inline: auto;
-  }
-  .exercise-article {
-    grid-column: 1;
-    grid-row: 2;
-    width: 100%;
-    overflow: auto;
-    height: auto;
-    margin-inline: auto;
-    padding-top: 0;
-  }
-  .btn-close-modal {
-    top: 1.5em;
-    right: 2em;
-    color: black;
-    border: 1px solid black;
-  }
-  .exercise-item {
-    margin-inline: auto;
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 1em;
-    width: 100%;
-    height: auto;
-  }
-  .exercise-item-info {
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-  }
-  .exercise-modal {
-    margin-inline: auto;
-    flex-direction: column;
-    z-index: 2;
-    overflow: scroll;
-    padding: 1em;
-  }
-  .exercise-details-article {
-    width: 95%;
-    overflow: scroll;
-    flex-direction: column;
-    margin-inline: auto;
-    padding: 0;
-    margin: 0 auto;
-  }
-  .exercise-details-article__details {
-    width: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-  }
-  .exercise-details-article__text {
-    text-align: center;
-  }
-  .exercise-details-article__img {
-    margin-left: 0;
-  }
-  .exercise-details-article__videos-wrapper {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3em;
-  }
+   .exercise-section {
+      place-content: start center;
+      row-gap: 2em;
+      grid-template-columns: 25em;
+   }
+   .aside-trening-menu {
+      grid-column: 1;
+      grid-row: 1;
+   }
+   #body-model-img {
+      width: 100%;
+      margin-inline: auto;
+   }
+   .exercise-article {
+      grid-column: 1;
+      grid-row: 2;
+      width: 100%;
+      overflow: auto;
+      height: auto;
+      margin-inline: auto;
+      padding-top: 0;
+   }
+   .btn-close-modal {
+      top: 1.5em;
+      right: 2em;
+      color: black;
+      border: 1px solid black;
+   }
+   .exercise-item {
+      margin-inline: auto;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 1em;
+      width: 100%;
+      height: auto;
+   }
+   .exercise-item-info {
+      justify-content: center;
+      align-items: center;
+      margin-top: 1em;
+   }
+   .exercise-modal {
+      margin-inline: auto;
+      flex-direction: column;
+      z-index: 2;
+      overflow: scroll;
+      padding: 1em;
+   }
+   .exercise-details-article {
+      width: 95%;
+      overflow: scroll;
+      flex-direction: column;
+      margin-inline: auto;
+      padding: 0;
+      margin: 0 auto;
+   }
+   .exercise-details-article__details {
+      width: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+   }
+   .exercise-details-article__text {
+      text-align: center;
+   }
+   .exercise-details-article__img {
+      margin-left: 0;
+   }
+   .exercise-details-article__videos-wrapper {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3em;
+   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
-  #body-model-img {
-    width: 100%;
-    margin-inline: auto;
-  }
-  .exercise-article {
-    height: 113vh;
-  }
-  .exercise-item {
-    margin-inline: auto;
-    align-items: center;
-    width: 100%;
-    height: auto;
-  }
+   #body-model-img {
+      width: 100%;
+      margin-inline: auto;
+   }
+   .exercise-article {
+      height: 113vh;
+   }
+   .exercise-item {
+      margin-inline: auto;
+      align-items: center;
+      width: 100%;
+      height: auto;
+   }
 }
 @media screen and (min-width: 600px) and (max-width: 999px) {
-  .exercise-section {
-    grid-template-columns: 30em;
-  }
-  .aside-trening-menu {
-    grid-column: 1;
-  }
-  #body-model-img {
-    -webkit-box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
-    box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
-    margin-inline: auto;
-  }
-  .exercise-article {
-    grid-column: 1;
-    grid-row: 2;
-    width: 100%;
-    overflow: auto;
-    height: auto;
-    margin-inline: auto;
-    padding-top: 0;
-  }
-  .exercise-item {
-    margin-inline: auto;
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 1em;
-    width: 100%;
-    height: auto;
-  }
-  .exercise-item-info {
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-  }
-  .exercise-details-article {
-    margin: 0 auto;
-  }
+   .exercise-section {
+      grid-template-columns: 30em;
+   }
+   .aside-trening-menu {
+      grid-column: 1;
+   }
+   #body-model-img {
+      -webkit-box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
+      -moz-box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
+      box-shadow: 0px 20px 10px -16px rgba(66, 68, 90, 1);
+      margin-inline: auto;
+   }
+   .exercise-article {
+      grid-column: 1;
+      grid-row: 2;
+      width: 100%;
+      overflow: auto;
+      height: auto;
+      margin-inline: auto;
+      padding-top: 0;
+   }
+   .exercise-item {
+      margin-inline: auto;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 1em;
+      width: 100%;
+      height: auto;
+   }
+   .exercise-item-info {
+      justify-content: center;
+      align-items: center;
+      margin-top: 1em;
+   }
+   .exercise-details-article {
+      margin: 0 auto;
+   }
 }

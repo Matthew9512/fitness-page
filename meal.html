@@ -13,6 +13,9 @@
   </head>
   <body>
     <main class="main-container">
+      <div class="spinner-wrapper hide">
+        <div class='spinner'></div>;
+        </div>
       <!-- navbar -->
       <nav class="main-navbar">
         <i class="fa-brands fa-joomla logo"></i>
@@ -47,32 +50,37 @@
           </p>
           <button class="button btn-toggle-clamp">read more</button>
         </div>
-        <section class="meal__grid hidden">
+        <section class="meal__container hidden">
+          <div class="meal__grid-info">
+            <p class="meal__grid-header">Calories Calculator</p>
+            <p class="meal__grid-subheader">Calculate the number of calories in each meal</p>
+            <p>What is a calorie calculator?
+              <span>The calorie calculator is designed to count how much energy has been consumed during the day. The calorie calculator also allows you to calculate the division into individual macronutrients, such as proteins, carbohydrates and fats.</span></p>
+              <p>Calories calculator - how to use it?
+              <span>enter the amount of food you've eaten during the day and the calorie calculator will summarize them by meal or as a daily total for that day. The calories calculator is really easy to use, see for yourself!</span>
+            </p>
+          </div>
+        <article class="meal__grid ">
           <article class="meal__grid-article"></article>
           <!-- sum of all meals nutrition -->
           <article class="meal__grid-sum hidden">
             <p class="meal__grid-sum-kcal"></p>
             <canvas id="myChart"></canvas>
           </article>
-        </section>
+        </article>
       </section>
+    </section>
       <!-- product modal -->
       <article class="product__search hidden">
         <div class="product__search-list"></div>
       </article>
       <!-- footer -->
       <footer class="main-footer">
-        <p class="footer-text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, et deserunt. Officiis, nobis? Alias obcaecati aliquid
-          aspernatur quam perspiciatis! Omnis.
-        </p>
-        <div class="footer-div">
-          <p class="footer-div__text">Page made by <a href="https://github.com/Matthew9512" target="_blank">Mateusz</a> © Copyright</p>
+          <p class="footer-div__text">Made by <a href="https://github.com/Matthew9512" target="_blank">Mateusz</a> © Copyright</p>
           <div id="edamam-badge"></div>
           <div class="media">
             <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
         </div>
         </div>
       </footer>
